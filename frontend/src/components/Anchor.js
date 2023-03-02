@@ -14,7 +14,7 @@ Anchor.defaultProps = {
     to: "/"
 }
 
-Headers.propTypes = {
+Anchor.propTypes = {
     title: PropTypes.string,
     to: PropTypes.string
 }

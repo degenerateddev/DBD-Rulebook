@@ -73,6 +73,14 @@ mongo.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "ru
             res.status(400).send("Unable to save data to database!")
         });
     });
+
+    app.delete("/remove", async (req, res) => {
+        console.log(req.body);
+        let id = req.body.id;
+        let rule = Rule.findByIdAndDelete(id);
+
+        res.send(JSON.stringify(rule))
+    })
     
     app.listen(port, () => {
         console.log(`DBD Rulebook Backend listening at http://localhost:${port}`)

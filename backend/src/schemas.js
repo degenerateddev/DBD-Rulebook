@@ -12,6 +12,10 @@ const ruleSchema = new mongo.Schema({
     killer: {
         type: Boolean,
         required: [true, "Killer or not must be specified!"]
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
